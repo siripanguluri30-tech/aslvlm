@@ -11,8 +11,8 @@ ASL Citizen is a crowdsourced isolated-sign dataset released by Microsoft Resear
 | Unique signs (gloss vocabulary) | 2,731 |
 | Unique signers | 30 (in sample) / 52 (full dataset) |
 | Train / Test / Val split sizes | 4,309 / 2,795 / 25 |
-| Median clip duration | ~2.3s |
-| Dominant frame rate | ~30 fps (76% of clips) |
+| Median clip duration | 2.67s |
+| Dominant frame rate | ~30 fps (93.3% of clips) |
 | Distinct resolutions observed | 2 (640×480, 960×540) |
 | OOV rate (val/test vs train vocab) | 0.00% |
 | Signer overlap across splits | 0 signers shared |
@@ -34,7 +34,7 @@ ASL Citizen is a crowdsourced isolated-sign dataset released by Microsoft Resear
 
 ## Implications for our experiments
 
-- **Frame sampling will need to be generous, not sparse.** At ~30fps and a median duration of ~2.3s, a typical clip is only ~70 frames long. A coarse uniform sample (e.g. 8 frames) would cover roughly one frame every 0.3s — likely enough for whole-sign shape but risky for signs with fast transitions or fingerspelled components. We should ablate frame count (e.g. 8 vs 16 vs 32) rather than assume a fixed budget is sufficient.
+- **Frame sampling will need to be generous, not sparse.** At ~30fps and a median duration of 2.67s, a typical clip is roughly 80 frames long.
 - **The long duration tail (out to ~9s) means a fixed-length input window will either truncate slow signers or pad heavily for fast ones.** Padding/truncation strategy should be a config option we test, not a silent default.
 - **Resolution is not a real source of variation** (only two fixed values), so any resizing/augmentation pipeline can standardize input size cheaply without worrying about extreme aspect-ratio edge cases.
 - **Signer imbalance (P33's ~950 clips vs. others' <20) means naive accuracy will be dominated by how well the model handles a handful of prolific signers.** We should report per-signer accuracy breakdowns, not just an aggregate number, to catch this.

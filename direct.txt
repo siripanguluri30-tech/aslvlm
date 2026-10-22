@@ -1,0 +1,6 @@
+These frames are from a video of one American Sign Language sign.
+Which candidate is being signed?
+
+{options}
+
+Reply with only the label ({labels}).

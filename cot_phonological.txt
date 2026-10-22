@@ -1,0 +1,11 @@
+These frames, in time order, are from a video of one American Sign Language sign.
+
+Step 1. Describe what you see: the handshape, where the hand is (location), and how it moves.
+Step 2. Compare that description with each candidate and say which fit and which do not.
+
+Candidates:
+{options}
+
+Keep the reasoning under 120 words. Then end with one last line in exactly this form:
+Final answer: <label>
+where <label> is one of {labels}.
